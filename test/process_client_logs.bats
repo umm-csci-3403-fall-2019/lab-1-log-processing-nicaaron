@@ -36,6 +36,7 @@ teardown() {
   bin/process_client_logs.sh "$BATS_TMPDIR"/discovery
   sort "$BATS_TMPDIR"/discovery/failed_login_data.txt > "$BATS_TMPDIR"/discovery_sorted.txt
   sort test/discovery_failed_login_data.txt > "$BATS_TMPDIR"/test_sorted.txt
+  cat "$BATS_TMPDIR"/discovery_sorted.txt
   run diff -wbB "$BATS_TMPDIR"/test_sorted.txt "$BATS_TMPDIR"/discovery_sorted.txt
   [ "$status" -eq 0 ]
 }
