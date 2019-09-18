@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-work_dir=$($pwd)
+work_dir=$(pwd)
 
 mkdir /tmp/scratch
 
@@ -16,6 +16,6 @@ done
 ./bin/create_country_dist.sh /tmp/scratch/
 ./bin/assemble_report.sh /tmp/scratch/
 
-mv /tmp/scratch/failed_login_summary.html "($work_dir)"
+mv /tmp/scratch/failed_login_summary.html "$work_dir"
 
-rm -rf "/tmp/scratch"
+rm -rf /tmp/scratch
